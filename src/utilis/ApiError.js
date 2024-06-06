@@ -5,12 +5,12 @@ class ApiError extends Error {
     error = [],
     stack = ""
   ) {
-    super(message);
+    super(message); //it calls the parent message from the super and add into the child message
     (this.statusCode = statusCode),
       (this.data = null),
       (this.message = message),
       (this.success = false),
-      (this.errors = errors);
+      (this.error = error);
     if (stack) {
       this.stack = stack;
     } else {
